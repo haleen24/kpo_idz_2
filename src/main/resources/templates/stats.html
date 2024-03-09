@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<link rel="stylesheet" href="/public/css/statistics.css">
+<link rel="stylesheet" href="/public/css/return_buttons.css">
+<link rel="stylesheet" href="../static/public/css/statistics.css">
+<link rel="stylesheet" href="../static/public/css/return_buttons.css">
+
+
+<body>
+
+<a class="go-back" th:href="@{/restaurant}">Back to main</a>
+
+<script type="text/javascript" th:src="@{/js/stats.js}"></script>
+<div class="statistics-page">
+    <form>
+        <input type="hidden" th:value="${users}" id="users">
+        <script th:inline="javascript">
+            setUsers()
+        </script>
+        <input type="hidden" th:value="${top_dishes}" id="dishes">
+        <script th:inline="javascript">
+            setDishes()
+        </script>
+    </form>
+    <br/>
+
+    <container class="container" id="container">
+        <form>
+            Select type:<br/>
+            <select name="stat" id="stat" onchange="showAll(this.options[this.selectedIndex].value)">
+                <option disabled selected value> -- select an option --</option>
+                <option value="users">Show all users</option>
+                <option value="avgRate">Sort by average rate</option>
+                <option value="freq">Sort by frequency</option>
+                <option value="rev">Sort by revenue</option>
+            </select>
+            <button type="button" onclick="reverse()"> &#8597</button>
+        </form>
+        <container-text id="container-text"></container-text>
+    </container>
+</div>
+</body>
+</html>

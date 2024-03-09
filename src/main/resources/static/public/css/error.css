@@ -1,0 +1,13 @@
+.dish-not-added{
+    background-color: whitesmoke;
+    width: 200px;
+    padding: 10px;
+    margin: 100px auto;
+    position: relative;
+    text-align: center;
+    color: black;
+    font-family: sans-serif;
+}
+.body {
+    background-color: seagreen;
+}

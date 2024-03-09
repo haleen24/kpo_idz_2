@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<link rel="stylesheet" href="/public/css/add_dish.css">
+<link rel="stylesheet" href="../static/public/css/add_dish.css">
+<link rel="stylesheet" href="../static/public/css/return_buttons.css">
+<link rel="stylesheet" href="/public/css/return_buttons.css">
+
+<body>
+
+<a class="go-back" th:href="@{/restaurant}"> Back to main</a>
+
+
+<div class="add-page">
+    <div class="form">
+        <form th:action="@{/restaurant/menu/add}" method="post">
+            <input type="text" placeholder="Dish name" id="name" name="name"/>
+            <input type="number" placeholder="Quantity" id="amount_of" name="amount_of"/>
+            <input type="number" placeholder="Price" id="price" name="price"/>
+            <input type="number" placeholder="Time for cooking in seconds " id="seconds" name="seconds">
+            <button type="submit" value="Create">Create</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<link rel="stylesheet" href="/public/css/login.css">
+<link rel="stylesheet" href="../static/public/css/login.css">
+<link rel="stylesheet" href="/public/css/return_buttons.css">
+<link rel="stylesheet" href="../static/public/css/return_buttons.css">
+<body>
+<a class="go-back" th:href="@{/login}">Back to log in</a>
+
+<div class="login-page">
+    <div class="form">
+        <form th:action="@{/login/create_user}" method="post">
+            <input type="text" id="username" placeholder="username" name="username"/>
+            <input type="text" id="password" placeholder="password" name="password"/>
+            <input class="add-user" type="submit" value="Create">
+        </form>
+    </div>
+</div>
+</body>
+</html>
