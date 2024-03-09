@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+
+</head>
+<body>
+<link rel="stylesheet" href="/public/css/login.css">
+<link rel="stylesheet" href="../static/public/css/login.css">
+<meta charset="UTF-8">
+<div class="login-page">
+    <div class="form">
+        <form th:action="@{/login}" method="post">
+<!--            <label for="username"> Username</label>-->
+            <input type="text" id="username"  placeholder="username" name="username"/>
+<!--            <label for="password"> Password </label>-->
+            <input type="text" id="password" placeholder="password" name="password"/>
+            <button type="submit">Sign in</button>
+            <p class="message"> Not registered yet?
+                <a th:href="@{/login/sign_up}"> Sign up </a>
+            </p>
+        </form>
+    </div>
+</div>
+</body>
+</html>

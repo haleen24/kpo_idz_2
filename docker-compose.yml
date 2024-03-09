@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "restaurantdb"
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "admin"
+    volumes:
+      - volume_db:/var/lib/postgresql/data
+      - ./script:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+    #command: [ "postgres", "-c", "log_statement=all" ]
+
+volumes:
+  volume_db:
+    external: false

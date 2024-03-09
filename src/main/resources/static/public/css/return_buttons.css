@@ -1,0 +1,24 @@
+.go-back {
+    width: 140px;
+    text-align: center;
+    padding: 7px;
+    margin-top: 5px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    color: dimgray;
+    font-family: sans-serif;
+    text-decoration: none;
+    position: absolute;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2),
+    0 5px 5px 0 rgba(0, 0, 0, 0.24);;
+    cursor: pointer;
+}
+
+.go-back:hover, .form button:active, .form button:focus {
+    background-color: darkgray;
+}
+
+.go-back a {
+    color: slategray;
+    text-decoration: none;
+}

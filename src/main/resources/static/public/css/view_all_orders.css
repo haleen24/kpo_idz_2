@@ -1,0 +1,71 @@
+.order {
+    position: relative;
+    width: 800px;
+    text-align: center;
+    margin: auto;
+    border-radius: 10px;
+    font-family: sans-serif;
+    background-color: whitesmoke;
+    height: 100%;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2),
+    0 5px 5px 0 rgba(0, 0, 0, 0.24);;
+}
+
+.order .header {
+    font-size: 30px;
+    color: dimgray;
+    margin-left: auto;
+}
+
+.order .dish {
+    margin: auto;
+    font-family: "fantasy";
+    font-size: 20px;
+    color: dimgray;
+}
+
+.order .dish p {
+    color: seagreen;
+}
+
+.order .dish p a {
+    color: dimgray;
+}
+
+.order .dish input {
+    background-color: lightgray;
+    border: 0;
+    box-sizing: border-box;
+    padding: 0.5%;
+}
+
+.order .container {
+    padding-bottom: 3%;
+    /*display: -webkit-inline-flex;*/
+}
+
+.order .dish button {
+    padding: 0.5%;
+    color: lightgray;
+    background-color: seagreen;
+    border: 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2),
+    0 5px 5px 0 rgba(0, 0, 0, 0.24);;
+}
+
+.order .dish button:hover, .form button:active, .form button:focus {
+    background-color: darkgreen;
+}
+
+.order .dish .border {
+    width: 100%;
+    position: absolute;
+    left: 0;
+
+    border-bottom: solid seagreen;
+}
+
+body {
+    background-color: seagreen;
+    -webkit-font-smoothing: antialiased;
+}

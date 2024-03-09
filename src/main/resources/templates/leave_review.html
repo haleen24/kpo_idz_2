@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<link rel="stylesheet" href="/public/css/review.css">
+<link rel="stylesheet" href="../static/public/css/review.css">
+<link rel="stylesheet" href="../static/public/css/return_buttons.css">
+<link rel="stylesheet" href="/public/css/return_buttons.css">
+
+<body class="body">
+
+    <a class="go-back" th:href="@{/restaurant}"> Back to main</a>
+
+<script th:src="@{js/review_checker.js}"></script>
+<div class="review">
+    <form id="form" th:action="@{/review}" method="post">
+        <p class="message">
+            <a>Your grade:</a>
+        </p>
+        <p class="selection">
+            1.<input type="radio" name="rate" value="1">
+            2.<input type="radio" name="rate" value="2">
+            3.<input type="radio" name="rate" value="3">
+            4.<input type="radio" name="rate" value="4">
+            5.<input type="radio" name="rate" value="5">
+        </p>
+        <input type="hidden" th:value="${order_id}" name="order_id">
+        <input type="hidden" th:value="${dish_id}" name="dish_id">
+        <textarea id="text" name="review" cols="50" rows="10" maxlength="256" style="resize: none"></textarea>
+        <p>
+            <a class="max-symbols"> Max 256 symbols </a>
+        </p>
+        <button type="button" onclick="review_checker()"> Submit</button>
+    </form>
+    <error class="error-message"></error>
+</div>
+</body>
+</html>

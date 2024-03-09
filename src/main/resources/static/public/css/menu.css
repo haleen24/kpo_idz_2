@@ -1,0 +1,160 @@
+
+.cart {
+    position: absolute;
+    margin-left: 70%;
+    width: 400px;
+    top: 0;
+    border-bottom-left-radius: 30px;
+    font-family: sans-serif;
+    background-color: whitesmoke;
+    height: 100%;
+    overflow-y: scroll;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2),
+    0 5px 5px 0 rgba(0, 0, 0, 0.24);;
+
+}
+
+.cart .header {
+    font-size: 30px;
+    color: dimgray;
+    margin-left: 35%;
+}
+
+.cart .create-order {
+    padding: 2%;
+    color: lightgray;
+    background-color: seagreen;
+    border: 0;
+    text-transform: none;
+    text-decoration: none;
+    width: 30%;
+    margin-left: 35%;
+    cursor: pointer;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2),
+    0 5px 5px 0 rgba(0, 0, 0, 0.24);;
+}
+
+.cart .create-order:hover {
+    background-color: darkgreen;
+}
+
+
+.cart .dish {
+    margin-left: 10px;
+    font-family: "fantasy";
+    font-size: 20px;
+    color: dimgray;
+}
+
+.cart .dish .border {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 100%;
+    border-bottom: solid seagreen;
+}
+
+.cart .dish p a {
+    color: seagreen;
+}
+
+.cart .dish input {
+    background-color: lightgray;
+    border: 0;
+    box-sizing: border-box;
+    padding: 2%;
+}
+
+.cart .dish button {
+    padding: 2%;
+    color: lightgray;
+    background-color: seagreen;
+    border: 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2),
+    0 5px 5px 0 rgba(0, 0, 0, 0.24);;
+    cursor: pointer;
+}
+
+.cart .dish button:hover, .form button:active, .form button:focus {
+    background-color: darkgreen;
+}
+
+.cart emptycart {
+    color: lightgray;
+    font-size: 20px;
+    background-color: seagreen;
+}
+
+.menu {
+    position: absolute;
+    left: 0;
+    width: 800px;
+    top: 0;
+    text-align: left;
+    border-top-right-radius: 30px;
+    direction: rtl;
+    font-family: sans-serif;
+    background-color: whitesmoke;
+    height: 100%;
+    overflow-y: scroll;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2),
+    0 5px 5px 0 rgba(0, 0, 0, 0.24);;
+}
+
+.menu .header {
+    font-size: 30px;
+    color: dimgray;
+    margin-left: 35%;
+}
+
+.menu .dish {
+    margin-left: 30%;
+    font-family: "fantasy";
+    font-size: 20px;
+    color: dimgray;
+}
+
+.menu .dish p {
+    color: seagreen;
+}
+
+.menu .dish p a {
+    color: dimgray;
+}
+
+.menu .dish input {
+    background-color: lightgray;
+    border: 0;
+    box-sizing: border-box;
+    padding: 0.5%;
+}
+
+.menu form {
+    display: inline;
+}
+
+.menu .dish button {
+    padding: 0.5%;
+    color: lightgray;
+    background-color: seagreen;
+    border: 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2),
+    0 5px 5px 0 rgba(0, 0, 0, 0.24);;
+}
+
+.menu .dish button:hover, .form button:active, .form button:focus {
+    background-color: darkgreen;
+}
+
+.menu .dish .border {
+    width: 100%;
+    position: absolute;
+    left: 0;
+
+    border-bottom: solid seagreen;
+}
+
+body {
+    background-color: seagreen;
+    -webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org" lang="">
+<head>
+    <title>Menu</title>
+
+</head>
+<body>
+
+<script type="text/javascript" th:src="@{/js/number_checker.js}"></script>
+
+<link rel="stylesheet" href="/public/css/menu.css">
+<link rel="stylesheet" href="/public/css/return_buttons.css">
+<link rel="stylesheet" href="../static/public/css/menu.css">
+<link rel="stylesheet" href="../static/public/css/return_buttons.css">
+<a class="go-back" style="z-index: 1000" th:href="@{/restaurant}"> Back to main </a>
+<div class="cart">
+    <p class="header">Your cart</p>
+    <div class="dish" th:each="order_dish: ${order}">
+        <a class="border"></a>
+        <br/>
+        <p>Current Name:
+            <a>[[${order_dish.key}]]</a>
+        </p>
+        <p>Current Quantity:
+            <a>[[${order_dish.value.quantity}]]</a>
+        </p>
+        <form th:id="${order_dish.key}" th:action="@{/restaurant/menu/cart/set}" method="post">
+            <input name="quantity" style="text-align: center" placeholder="input new value" id="quantity-input"
+                   type="number">
+            <input type="hidden" th:value="${order_dish.value.dish.id}" name="dish_id">
+            <button type="button" onclick="check_quantity(this)">Save</button>
+            <p class="error-message"></p>
+        </form>
+        <br/>
+        <a class="border"></a>
+    </div>
+    <br/>
+    <div class="create-order" th:if="${not #maps.isEmpty(order)}">
+        <a style="text-decoration: none" th:href="@{/order/create}"> Create order </a>
+    </div>
+    <emptycart th:if="${#maps.isEmpty(order)}">
+        There is empty, lets start adding to the cart!
+    </emptycart>
+</div>
+
+
+<meta charset="UTF-8">
+<div class="menu">
+    <p class="header">Menu</p>
+    <div class="dish" th:each="dish: ${dishes}">
+        <a class="border"></a>
+        <br/>
+        <div sec:authorize accesskey="hasRole('ADMIN')">
+            <a th:text="${dish.id}">Id</a>
+        </div>
+        <p>Name:
+            <a> [[${dish.name}]]</a>
+        </p>
+        <p>Quantity:
+            <a>
+                <a th:if="${dish.amountOf!=0}">[[${dish.amountOf}]]</a>
+            </a>
+            <a th:unless="${dish.amountOf!=0}">Out of stock</a>
+        </p>
+        <p>Cooking time:
+            <a>
+                [[${dish.seconds}]]
+            </a>
+        </p>
+        <p>Price:
+            <a>
+                [[${dish.price}]]
+            </a>
+        </p>
+        <form th:action="@{/review/view}">
+            <button type="submit" th:value="${dish.id}" name="id">Reviews</button>
+        </form>
+        <form th:action="@{/restaurant/menu/cart/set}" method="post">
+            <button type="submit" name="dish_id" th:value="${dish.id}">Add to cart</button>
+            <input type="hidden" name="quantity" value="1">
+        </form>
+
+        <!-- кнопки админ панели  -->
+        <div sec:authorize="hasRole('ADMIN')">
+            <form th:id="${dish.id}" th:action="@{/restaurant/menu/change_amount_of}" method="post">
+                <input style="text-align: center" name="quantity" placeholder="input new value" id="admin-quantity"
+                       type="number">
+                <input type="hidden" th:value="${dish.id}" name="id">
+                <button type="button" onclick="check_quantity(this)">Save</button>
+                <p class="error-message"></p>
+            </form>
+        </div>
+        <br/>
+        <a class="border"></a>
+    </div>
+</div>
+</body>
+</html>

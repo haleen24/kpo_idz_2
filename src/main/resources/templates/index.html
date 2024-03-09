@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<link rel="stylesheet" href="/public/css/index.css">
+<link rel="stylesheet" href="/public/css/return_buttons.css">
+<link rel="stylesheet" href="../static/public/css/index.css">
+<link rel="stylesheet" href="../static/public/css/return_buttons.css">
+<body>
+<a class="go-back" th:href="@{/login}"> Back to log in page </a>
+
+<div class="menu-page" sec:authorize="isAuthenticated()">
+    <p class="greetings" th:each="name : ${name}">
+        <a>
+            Hello [[${name}]], you have been authorized!
+        </a>
+    </p>
+    <div class="menu">
+        <a th:href="@{restaurant/menu}"> View menu<br/></a><br/>
+        <a th:href="@{order/view}"> View your orders</a><br/>
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+            <p class="admin-message"> Admin-panel<br/></p>
+            <a th:href="@{restaurant/menu/add}"> Add dish to menu</a><br/>
+            <a th:href="@{login/admin}"> Add admin </a><br/>
+            <a th:href="@{stats}">Check statistic</a><br/>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

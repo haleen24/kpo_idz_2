@@ -1,0 +1,64 @@
+body {
+    background-color: seagreen;
+    -webkit-font-smoothing: antialiased;
+}
+
+.review {
+    position: relative;
+    margin: auto;
+    width: 500px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2),
+    0 5px 5px 0 rgba(0, 0, 0, 0.24);;
+
+}
+
+.review .message {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 20px;
+    background-color: lightgray;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: seagreen;
+}
+
+.review .selection {
+    margin-left: 31%;
+}
+
+.review input {
+    display: inline-flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.review textarea {
+    margin-left: 7%;
+}
+
+.review .max-symbols {
+    text-align: center;
+    margin-left: 70%;
+    color: slategray;
+}
+
+.review button {
+    position: absolute;
+    background-color: seagreen;
+    margin-left: 40%;
+    margin-bottom: 10%;
+    width: 100px;
+    height: 30px;
+    color: lightgray;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2),
+    0 5px 5px 0 rgba(0, 0, 0, 0.24);;
+    cursor: pointer;
+}
+
+.review button:hover, .form button:active, .form button:focus {
+    background-color: darkgreen;
+}

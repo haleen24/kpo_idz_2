@@ -1,0 +1,66 @@
+.add-page {
+    width: 360px;
+    padding: 5% 0 0;
+    margin: auto;
+}
+
+.form {
+    position: relative;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2),
+    0 5px 5px 0 rgba(0, 0, 0, 0.24);;
+}
+
+.form input {
+    background-color: lightgray;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.form button {
+    text-transform: uppercase;
+    outline: 0;
+    background-color: seagreen;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: whitesmoke;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form button:hover, .form button:active, .form button:focus {
+    background-color: darkgreen;
+}
+
+.form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+    text-align: center;
+}
+.form .message a {
+    color: seagreen;
+    text-decoration: none;
+}
+
+.form .add-dish {
+    background-color: seagreen;
+    color: whitesmoke;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 20px;
+}
+
+body {
+    background-color: seagreen;
+    -webkit-font-smoothing: antialiased;
+}

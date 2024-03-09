@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org" lang="">
+<head>
+    <meta http-equiv="refresh" content="4" charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<link rel="stylesheet" href="/public/css/view_all_orders.css">
+<link rel="stylesheet" href="../static/public/css/view_all_orders.css">
+<link rel="stylesheet" href="../static/public/css/return_buttons.css">
+<link rel="stylesheet" href="/public/css/return_buttons.css">
+
+<body>
+<a class="go-back" th:href="@{/restaurant}">Back to main </a>
+
+<div class="order">
+    <a class="header">Your orders</a>
+    <div class="dish" th:each="order: ${orders}">
+        <a class="border"></a>
+        <br/>
+        <p>Id: [[${order.first.id}]]</p>
+        <p> Status: [[${order.first.status}]]</p>
+        <p>Price: [[${order.first.price}]]</p>
+        <a th:each="dish: ${order.second}">
+            <p> Dish name: [[${dish.name}]], Quantity: [[${dish.quantity}]]</p>
+            <a th:if="${order.first.status=='payed'}">
+                <form th:action="@{/review}">
+                    <button type="submit" th:value="${order.first.id}" name="order_id"> Leave review</button>
+                    <input type="hidden" th:value="${dish.dishId}" name="dish_id">
+                </form>
+            </a>
+        </a>
+        <div class="container">
+            <a th:if="${order.first.status=='done'}">
+                <form th:action="@{/order/payment}">
+                    <button type="submit" th:value="${order.first.id}" name="id"> Pay for the order</button>
+                </form>
+            </a>
+            <a th:if="${order.first.status=='processing' or order.first.status=='cooking'}">
+                <form th:action="@{/order/cancel}">
+                    <button type="submit" th:value="${order.first.id}" name="order_id">Cancel the order</button>
+                </form>
+            </a>
+        </div>
+        <a class="border"></a>
+        <br/>
+    </div>
+    <emptyorders th:if="${#lists.isEmpty(orders)}">
+        <h3> You don't have orders yet!</h3>
+    </emptyorders>
+
+</div>
+</div>
+
+</body>
+</html>
